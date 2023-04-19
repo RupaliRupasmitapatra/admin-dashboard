@@ -29,14 +29,14 @@ for (let i = 0; i < 46; i++) {
     });
 }
 
- const Blogcatlist = () =>{
+ const Bloglist = () =>{
      return(
          <div>
-             <h3 className="mb-4">Blog list</h3>
+             <h3 className="mb-4 title">Blogs list</h3>
              <div>
                  <Table columns={column} dataSource={data1} />
              </div>
          </div>
      )
  }
- export default Blogcatlist
+ export default Bloglist;
