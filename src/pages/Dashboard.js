@@ -2,6 +2,7 @@ import React from "react";
 import {BsArrowDownRight,} from "react-icons/bs";
 import { Column } from '@ant-design/plots';
 import {Table} from 'antd';
+import { Calendar } from 'antd';
 // BsArrowUpRight
 
 const column = [
@@ -150,19 +151,29 @@ const Dashboard =()=>{
                     </div>
                 </div>
             </div>
-            <div className="d-flex gap-3 justify-content-between">
-                <div className="mt-4 w-50 flex-grow-1">
+            <div className="d-flex gap-2 justify-content-between">
+                <div className="mt-4 w- flex-grow-1">
                     <h3 className="mb-4 title">Income Statics</h3>
                     <div><Column {...config} />
                     </div>
                 </div>
-                <div className="mt-4 w-50 flex-grow-1">
+                <div className="mt-4 w-30 flex-grow-1">
                     <h3 className="mb-4 title">Recent Orders</h3>
                     <div>
                         <Table columns={column} dataSource={data1} />
                     </div>
                 </div>
+                <div
+                    className="mt-4 w-30 flex-grow-1"style={{
+                    display: 'block', width:400,height:200,padding: 20
+                }}>
+                    <h3 className="mb-4 title">Calendar</h3>
+                    <div><Calendar onChange={(value) => {
+                        alert(`Your selected ${value.format('YYYY-MM-DD')}`)
+                    }} /></div>
+                </div>
             </div>
+
         </div>
 
     )
